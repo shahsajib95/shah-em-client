@@ -1,38 +1,75 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,500&display=swap");
+* {
+  font-family: "Montserrat", "Hind Siliguri", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+.bg-light {
+  background-color: #e8e8e8 !important;
+}
+.btn {
+  background-color: red !important;
+  border-radius: 0;
+  color: #fff !important;
+  border: 1px solid red;
+}
+.btn:hover {
+  background-color: #fff !important;
+  color: black !important;
+}
+.bg-danger{
+  background-color: rgb(255, 76, 44) !important;
+}
+.form-control {
+  border-radius: 0;
+}
+.navbar {
+  font-size: 17px;
+}
+.navbar-nav .dropdown-menu {
+  border: none;
+}
+.card {
+  border: none;
+}
+.banner {
+  background-image: url("./img/ecom.png");
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.banner h1 {
+  font-size: 4rem;
+}
+.cartText {
+  background: #f36e36;
+  color: #fff;
+  font-weight: 400;
   text-align: center;
+  border: 3px solid #f36e36;
+  font-size: 13px;
+  min-width: 14px;
+  line-height: 14px;
+  border-radius: 50%;
+}
+.nav-link {
+  font-size: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Porduct Description */
+.product-description {
+  font-size: 14px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product img {
+  height: 200px;
+  width: 220px;
+  object-fit: contain;
 }
