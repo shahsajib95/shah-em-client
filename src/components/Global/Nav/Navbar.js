@@ -25,8 +25,8 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light py-3">
         <div className="container-fluid container">
-          <Link className="navbar-brand" to="/">
-            <span className="text-danger fw-bold">SHAH COMMERCE</span>
+          <Link className="navbar-brand d-flex align-items-center" to="/">
+            <img src="/logo.png" width="30"/><span className="text-danger fw-bold ms-2">SHAH COMMERCE</span>
           </Link>
           <button
             className="navbar-toggler"

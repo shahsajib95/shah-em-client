@@ -65,7 +65,7 @@ export default function ProductDetails() {
             <div className="p-5">
               <h2>{product.title}</h2>
               <Link
-                to={`store/${product.user.store.replace(/\s/g, "-")}/${
+                to={`/store/${product.user.store.replace(/\s/g, "-")}/${
                   product.user._id
                 }`}
               >

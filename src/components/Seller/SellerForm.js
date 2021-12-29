@@ -39,7 +39,7 @@ export default function SellerForm() {
     });
     
     dispatch(notifyLoading(false));
-    console.log(res);
+
     if (res.modifiedCount > 0) {
       const userData = await getData("accessUser", token);
       if (userData.user) return dispatch(userLoggedIn(userData));

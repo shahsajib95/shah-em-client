@@ -16,7 +16,7 @@ export default function Products({ product }) {
         <img src={product.images[0].url} alt="prodImg" className="w-100"/>
         <small className="text-secondary text-center fw-light mt-3">
           <Link
-            to={`store/${product.user.store.replace(/\s/g, "-")}/${
+            to={`/store/${product.user.store.replace(/\s/g, "-")}/${
               product.user._id
             }`}
           >
@@ -26,7 +26,7 @@ export default function Products({ product }) {
         <h6 className="text-center">
           <span className="fw-bold text-secondary">{product.category}</span>
         </h6>
-        <Link to={`/product/${product.title}/${product._id}`}>
+        <Link to={`/product/${product.title.replace(/\s/g, "-")}/${product._id}`}>
           <h6 className="fw-bold text-center my-2">{product.title}</h6>
         </Link>
         <h6 className="text-danger text-center">

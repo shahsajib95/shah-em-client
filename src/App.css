@@ -73,3 +73,23 @@ a:hover {
   width: 220px;
   object-fit: contain;
 }
+
+.footer p{
+  font-size: 12px;
+  margin-bottom: 0
+}
+.footer small{
+  font-size: 12px;
+  margin-bottom: 0
+}
+
+@media only screen and (max-width: 767px) {
+  .banner h1 {
+    font-size: 3rem
+  }
+}
+@media only screen and (max-width: 425px) {
+  .banner h1 {
+    font-size: 2rem
+  }
+}

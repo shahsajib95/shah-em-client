@@ -26,14 +26,16 @@ export default function UserForm() {
       address: userData.address,
       id: auth.user._id,
     });
-
     dispatch(notifyLoading(false));
+
     if (res.modifiedCount > 0) {
       const userData = await getData("accessUser", token);
       if (userData.user) return dispatch(userLoggedIn(userData));
       e.target.reset()
     }
 
+    if (res.user) return dispatch(userLoggedIn(res));
+    
   };
   return (
     <div className="mt-4">

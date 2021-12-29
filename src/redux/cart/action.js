@@ -13,7 +13,7 @@ export const AddToCart = (cart, product) => async (dispatch) => {
   if (!check)
     return dispatch(notifyError("Product is already added to cart")); 
 
-  dispatch(addCToCartData([...cart, {...product, quantity: 1}]));
+  dispatch(loadCart([...cart, {...product, quantity: 1}]));
   return dispatch(notifySuccess("Product is added to cart")); 
 };
 export const loadingCart = (data) => async (dispatch) => {
@@ -32,8 +32,7 @@ export const increase = (data, id) => async (dispatch) => {
   const filtered = newData.filter((i) => i._id !== id);
   filtered.splice(newData.indexOf(prod), 0, { ...prod, quantity: prod.quantity + 1 }); 
   
-  localStorage.setItem("shah_cart", JSON.stringify(filtered));
-  return dispatch(addCToCartData(filtered));
+  return dispatch(loadCart(filtered));
 };
 export const decrease = (data, id) => async (dispatch) => {
   const newData = [...data];
@@ -42,8 +41,7 @@ export const decrease = (data, id) => async (dispatch) => {
   const filtered = newData.filter((i) => i._id !== id);
   filtered.splice(newData.indexOf(prod), 0, { ...prod, quantity: prod.quantity <= 1 ? 1 : prod.quantity - 1 });
 
-  localStorage.setItem("shah_cart", JSON.stringify(filtered));
-  dispatch(addCToCartData(filtered));
+  dispatch(loadCart(filtered));
 };
 
 export const removeFromCart = (data, id) => async (dispatch) => {
@@ -51,10 +49,16 @@ export const removeFromCart = (data, id) => async (dispatch) => {
   const filtered = newData.filter((i) => i._id !== id);
 
   localStorage.setItem("shah_cart", JSON.stringify(filtered));
-  dispatch(addCToCartData(filtered));
+  dispatch(loadCart(filtered));
 };
 
 export const updateItem = (data, id, post, type) => {
   const newData = data.map(item => (item._id === id ? post : item))
   return ({ type, payload: newData})
+}
+
+export const loadCart = (data) => async (dispatch) => {
+  localStorage.setItem("shah_cart", JSON.stringify(data));
+  dispatch(addCToCartData(data))
+ 
 }
